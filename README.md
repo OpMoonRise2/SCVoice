@@ -28,7 +28,7 @@ Requires Ashita v4 on Windows. The addon uses Ashita's bundled common, chat, FFI
 
 1. Put `scvoice.lua` at `Ashita/addons/scvoice/scvoice.lua`.
 2. Install the separately supplied `sounds/` folder beside it. The complete package contains 37 MP3 files; the Git source ZIP does not include recordings.
-3. Run `/addon load scvoice`. Open the settings window with `/scvoice`.
+3. Run `/addon load scvoice`. Open the settings window with `/sc` or `/scvoice`.
 4. Choose your volume, preset and callout scope, then click **Save Settings**.
 
 For an update, preserve your existing addon folder outside the install and retain personal settings under Ashita's configuration directory. Reload with `/addon reload scvoice`. To uninstall, unload the addon and remove its folder; original native audio files are not replaced.

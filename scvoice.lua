@@ -28,7 +28,7 @@
 addon.name      = 'SCVoice';
 addon.author    = 'MoonRise (Eldorin)';
 addon.version   = '1.4';
-addon.desc      = 'Skillchain Voice Callouts /scvoice for gui';
+addon.desc      = 'Skillchain Voice Callouts /sc or /scvoice for gui';
 addon.link      = '';
 
 require('common');
@@ -729,7 +729,7 @@ end);
 -- ============================================================
 ashita.events.register('command', 'scvoice_cmd', function(e)
     local args = e.command:args();
-    if #args > 0 and args[1] == '/scvoice' then
+    if #args > 0 and (args[1] == '/scvoice' or args[1] == '/sc') then
         sc_config.is_open[1] = not sc_config.is_open[1];
         e.blocked = true;
     end
