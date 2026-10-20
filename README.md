@@ -47,6 +47,17 @@ The current parser reads the configured skillchain property from closing weapon-
 
 A new skillchain replaces the previous skillchain callout. Magic Burst and Cosmic Elucidation use separate sound slots. Numbered variants are randomly selected; a no-repeat cycle is not implemented. Test buttons bypass the preset rate gate, but still require the addon to be enabled.
 
+## How it works
+
+SCVoice only plays recordings for results the game already reports. It does not change anything the server sees, and it does not play the game for you.
+
+- **Packets.** It reads incoming `0x028` (action) packets. A closing weapon skill's skillchain property selects the skillchain callout. Message 252 (Magic Burst) and message 302 (Cosmic Elucidation) select those callouts. These are the same results the chat log prints. The scope filter (Everyone, Party/Alliance, Self Only) uses your party list from Ashita's memory manager. It sends no packets, injects none, and never blocks or modifies one.
+- **Timing.** A callout plays after the skillchain or burst has already happened. It never predicts or times a skillchain or burst window.
+- **Audio and files.** Playback uses the Windows MCI player (`winmm.dll`). It writes its settings and `voice_duck_signal.txt` (optional ZoneMusic ducking), and reads recordings from `sounds/`.
+- **Commands.** `/sc` and `/scvoice` toggle the GUI; the handler blocks only the addon's own slash commands.
+
+It queues no game commands, creates no macros and automates nothing.
+
 ## Source and authorship
 
 Original author: **MoonRise (Eldorin)**. Author credit is retained. This preparation does not assign a new license or change the runtime version.
