@@ -1,16 +1,23 @@
 # SCVoice 1.4
 
-## Download the complete audio package
+## Download
 
-**[Download SCVoice and its accompanying audio package on Nexus Mods](https://www.nexusmods.com/finalfantasy11/mods/40).**
+**[Download SCVoice-1.4-addon.zip from GitHub Releases](https://github.com/OpMoonRise2/SCVoice/releases/latest).** GitHub is the only download location for the addon. The release ZIP contains the addon code and documentation, and it extracts straight into your Ashita folder.
 
-GitHub contains the addon source and documentation. To hear the supplied recordings, install the complete package from Nexus Mods; the GitHub source ZIP does not include the audio library.
+The voice recordings are optional and separate. The [SCVoice Sound Pack on Nexus Mods](https://www.nexusmods.com/finalfantasy11/mods/40) contains audio only, with no addon code. You may instead supply your own recordings using the filenames below. Missing recordings cannot play.
 
 Skillchain and Magic Burst voice callouts for Ashita v4, with selectable frequency, scope filters, volume control and in-menu previews.
 
 ## New in 1.4
 
 The redesigned navy-and-gold GUI matches BeastVoice, with a resizable window, wrapped help text, scrolling content and separate General, Voice Setup, Callouts and Audition pages. Each of the 16 skillchains, Magic Burst and Cosmic Elucidation has its own saved switch. All On/Off controls are included; disabling a callout stops its current SCVoice-owned recording. Switches apply to both automatic playback and audition. Missing new settings default to enabled.
+
+## Screenshots
+
+![General settings](docs/screenshots/general.png)
+![Voice preset and callout scope](docs/screenshots/voice-setup.png)
+![Individual callout switches](docs/screenshots/callouts.png)
+![Audition recordings](docs/screenshots/audition.png)
 
 ## Features
 
@@ -26,8 +33,8 @@ The redesigned navy-and-gold GUI matches BeastVoice, with a resizable window, wr
 
 Requires Ashita v4 on Windows. The addon uses Ashita's bundled common, chat, FFI, ImGui and settings modules, plus the Windows MCI audio player.
 
-1. Put `scvoice.lua` at `Ashita/addons/scvoice/scvoice.lua`.
-2. Install the separately supplied `sounds/` folder beside it. The complete package contains 37 MP3 files; the Git source ZIP does not include recordings.
+1. Download `SCVoice-1.4-addon.zip` from [GitHub Releases](https://github.com/OpMoonRise2/SCVoice/releases/latest) and extract it into your Ashita folder. It creates `addons/scvoice/`.
+2. Optional: extract the SCVoice Sound Pack from Nexus Mods into your Ashita folder. It adds the 37 MP3 recordings under `addons/scvoice/sounds/`. You can supply your own recordings there instead.
 3. Run `/addon load scvoice`. Open the settings window with `/sc` or `/scvoice`.
 4. Choose your volume, preset and callout scope, then click **Save Settings**.
 
